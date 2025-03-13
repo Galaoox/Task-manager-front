@@ -1,4 +1,4 @@
-# Test Smart Talent Front
+# Task Manager Front
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 19.2.2.
 
