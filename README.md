@@ -7,6 +7,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 - Node.js (versión recomendada: 18.x o superior)
 - Yarn (como gestor de paquetes)
 - Angular CLI versión 19.2.2
+- Make (para usar los comandos del Makefile)
 ```bash
 yarn global add @angular/cli
 ```
@@ -111,3 +112,25 @@ Por favor, lee la guía de contribución antes de enviar pull requests.
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia [Mit] 
+
+## 🚀 Despliegue en GitHub Pages
+
+El proyecto incluye un Makefile para facilitar el proceso de despliegue en GitHub Pages. Los comandos disponibles son:
+
+```bash
+make install  # Instalar dependencias
+make build    # Construir el proyecto para producción
+make deploy   # Desplegar en GitHub Pages
+make publish  # Ejecutar todo el proceso (instalar, construir y desplegar)
+make help     # Mostrar esta ayuda
+```
+
+Para publicar el proyecto, simplemente ejecuta:
+
+```bash
+make publish
+```
+
+Una vez completado el proceso, la aplicación estará disponible en: https://Galaoox.github.io/Task-manager-front/
+
+> **Nota**: Asegúrate de que GitHub Pages esté habilitado en la configuración del repositorio (Settings > Pages) y que la rama `gh-pages` esté seleccionada como fuente.
