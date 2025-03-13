@@ -15,7 +15,7 @@ yarn global add @angular/cli
 
 1. Clona el repositorio:
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+git clone https://github.com/Galaoox/Task-manager-front.git
 ```
 
 2. Instala las dependencias usando Yarn:
