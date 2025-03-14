@@ -78,7 +78,6 @@ ng build
 
 Los archivos de construcción se almacenarán en el directorio `dist/`.
 
-
 ## 📦 Dependencias Principales
 
 - Angular v19.2.0
@@ -146,3 +145,27 @@ En este modo, los datos se almacenan en el LocalStorage del navegador. Esto es �
 ### Modo API
 
 Al activar el modo API, la aplicación realizará solicitudes a una API externa para realizar operaciones CRUD. Asegúrate de que la API esté disponible y configurada correctamente.
+
+## Justificación de la Estructura del Proyecto
+
+La estructura del proyecto en la carpeta `@app` ha sido diseñada para promover la modularidad, la reutilización de componentes y la separación de preocupaciones. Esta organización permite que el desarrollo y el mantenimiento del código sean más eficientes y escalables. A continuación, se detallan los principales componentes de esta estructura:
+
+1. **Core**: Esta carpeta contiene servicios singleton y modelos universales que son utilizados en toda la aplicación. Al centralizar estos elementos, se evita la duplicación de código y se facilita la gestión de dependencias.
+
+2. **Features**: Aquí se agrupan los módulos de características específicas de la aplicación. Cada módulo puede contener sus propios componentes, servicios y modelos, lo que permite un desarrollo más enfocado y organizado. Esto también facilita la implementación de nuevas características sin afectar el resto de la aplicación.
+
+3. **Shared**: Esta carpeta alberga componentes, pipes y directivas que son utilizados en múltiples lugares de la aplicación. Al tener estos elementos compartidos, se promueve la reutilización y se reduce la redundancia en el código.
+
+4. **Configuración y Rutas**: Los archivos `app.config.ts` y `app.routes.ts` se encargan de la configuración de la aplicación y la definición de las rutas, respectivamente. Esto permite una gestión clara y centralizada de la configuración de la aplicación y su navegación.
+
+## Justificación de la Implementación de `task-service-factory.service.ts`
+
+La decisión de implementar el `task-service-factory.service.ts` se basa en la necesidad de proporcionar una forma flexible y escalable de gestionar diferentes fuentes de datos (local y API) en la aplicación. Este patrón de diseño permite:
+
+1. **Abstracción**: Al utilizar un patrón de fábrica, se abstrae la lógica de selección del servicio de tareas, lo que permite cambiar fácilmente entre diferentes implementaciones (como `LocalTaskService` y `ApiTaskService`) sin modificar el código que consume estos servicios.
+
+2. **Flexibilidad**: La aplicación puede adaptarse a diferentes entornos (por ejemplo, desarrollo local o producción) sin necesidad de realizar cambios significativos en el código. Esto es especialmente útil en situaciones donde se requiere cambiar la fuente de datos en tiempo de ejecución.
+
+3. **Mantenibilidad**: Al centralizar la lógica de selección del servicio en un solo lugar, se facilita el mantenimiento y la extensión del código. Si en el futuro se necesita agregar un nuevo tipo de servicio, solo se debe modificar la fábrica sin afectar el resto de la aplicación.
+
+4. **Observabilidad**: La implementación de un `BehaviorSubject` para gestionar el tipo de servicio actual permite que otros componentes de la aplicación se suscriban a los cambios y reaccionen en consecuencia, mejorando la reactividad de la aplicación.
