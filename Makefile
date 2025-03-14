@@ -14,8 +14,8 @@ deploy:
 	yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent
 
 deploy-alt:
-    @echo "Deploying to GitHub Pages with token"
-    GITHUB_TOKEN=$(DEPLOY_TOKEN) yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent
+	@echo "Deploying to GitHub Pages with token"
+	GITHUB_TOKEN=$(DEPLOY_TOKEN) yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent
 
 # Ejecutar todo el proceso de publicación
 publish: install build deploy
@@ -27,4 +27,4 @@ help:
 	@echo "  make build    - Construir el proyecto para producción"
 	@echo "  make deploy   - Desplegar en GitHub Pages"
 	@echo "  make publish  - Ejecutar todo el proceso (instalar, construir y desplegar)"
-	@echo "  make help     - Mostrar esta ayuda" 
+	@echo "  make help     - Mostrar esta ayuda"
