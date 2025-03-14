@@ -134,3 +134,15 @@ make publish
 Una vez completado el proceso, la aplicación estará disponible en: https://Galaoox.github.io/Task-manager-front/
 
 > **Nota**: Asegúrate de que GitHub Pages esté habilitado en la configuración del repositorio (Settings > Pages) y que la rama `gh-pages` esté seleccionada como fuente.
+
+## ⚙️ Modo Local y Modo API
+
+La aplicación permite alternar entre el modo local (usando LocalStorage) y el modo API (consumiendo una API externa). Para cambiar entre estos modos, utiliza el switch disponible en la interfaz de usuario.
+
+### Modo Local
+
+En este modo, los datos se almacenan en el LocalStorage del navegador. Esto es útil para pruebas rápidas y desarrollo sin necesidad de una conexión a Internet.
+
+### Modo API
+
+Al activar el modo API, la aplicación realizará solicitudes a una API externa para realizar operaciones CRUD. Asegúrate de que la API esté disponible y configurada correctamente.
