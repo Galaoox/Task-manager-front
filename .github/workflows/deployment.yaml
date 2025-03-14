@@ -20,6 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: make install  
+        
+      - name: Set up Git user dynamically
+        run: |
+          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "github-actions@users.noreply.github.com"
 
       - name: Build
         run: make build  
