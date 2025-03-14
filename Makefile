@@ -10,7 +10,7 @@ build:
 
 # Desplegar en GitHub Pages
 deploy: build
-	yarn angular-cli-ghpages --dir=dist/task-manager-front/browser
+	yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent
 
 # Ejecutar todo el proceso de publicación
 publish: install build deploy
