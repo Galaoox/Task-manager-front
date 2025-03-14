@@ -1,4 +1,4 @@
-.PHONY: install build deploy
+.PHONY: install build deploy deploy-alt
 
 # Instalar dependencias
 install:
@@ -9,8 +9,13 @@ build:
 	yarn build --configuration production --base-href "https://Galaoox.github.io/Task-manager-front/"
 
 # Desplegar en GitHub Pages
-deploy: build
+deploy:
+	@echo "Deploying to GitHub Pages"
 	yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent
+
+deploy-alt:
+	@echo "Deploying to GitHub Pages with token"
+	yarn angular-cli-ghpages --dir=dist/task-manager-front/browser --no-silent --token $(DEPLOY_TOKEN)
 
 # Ejecutar todo el proceso de publicación
 publish: install build deploy

@@ -25,6 +25,6 @@ jobs:
         run: make build  
 
       - name: Deploy
-        run: make deploy 
+        run: make deploy-alt
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }} 
